@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link href="/bundles/easyadmin/app.css" rel="stylesheet" />
+    <link href="favicon-32x32.png" rel="icon" />
+{% endblock %}
+{% block title %}DocThor - zresetuj hasło{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+    <section class="vh-100" style="background-color: #508bfc;">
+  <div class="container py-5 h-100">
+   <center><a href="/admin"><h1><img src="thor.png">DocThor</h1></a></center>
+    <div class="row d-flex justify-content-center align-items-center ">
+      <div class="col-12 col-md-8 col-lg-2 col-xl-4">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+    <h3 class="h3 mb-3 font-weight-normal">Zresetuj hasło</h3>
+    Wprowadź adres email połączony z twoim kontem w celu otrzymania wiadomości z linkiem resetujacym hasło.
+
+    {{ form_start(requestForm) }} 
+        {{ form_row(requestForm.email) }}
+
+<br>
+    <button class="btn btn-primary">Wyślij link</button>
+    {{ form_end(requestForm) }} </center>
+
+
+        </div>
+    </div>
+  </div>
+</section>
+    <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: #60a5fa;">
+    © 2022 Copyright:
+    <a class="text-white" href="/admin">docthor.pl</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+{% endblock %}

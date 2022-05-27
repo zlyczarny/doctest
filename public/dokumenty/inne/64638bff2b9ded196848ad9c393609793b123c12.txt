@@ -1,0 +1,16 @@
+git add . - dodanie plików do śledzenia
+git commit -m "komentarz"- zatwierdzenie zmian
+git checkout - usuniecie zmian
+git status - status plików
+git init- tworzenie projektu
+git clean -nd - lista plików nieśledzonych do usunięcia
+git reset - usuwa plik do sledzenia
+git revert - odwrócenie zmian z wybranego commitu i zapisanie jako nowy comit
+git log --oneline
+git push - wysłanie do githuba
+git fetch - pobranie info z githuba
+
+podłączenie pod github
+git remote add origin https://github.com/zlyczarny/test-remote.git
+git branch -M main
+git push -u origin main

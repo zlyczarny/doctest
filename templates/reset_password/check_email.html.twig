@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link href="/bundles/easyadmin/app.css" rel="stylesheet" />
+    <link href="../favicon-32x32.png" rel="icon" />
+{% endblock %}
+{% block title %}DocThor - Link zmiany hasła został wysłany{% endblock %}
+
+{% block body %}
+  
+<section class="vh-100" style="background-color: #508bfc;">
+  <div class="container py-5 h-100">
+   <center><a href="/admin"><h1><img src="..\thor.png">DocThor</h1></a></center>
+    <div class="row d-flex justify-content-center align-items-center ">
+      <div class="col-12 col-md-8 col-lg-2 col-xl-4">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+    <h3 class="h3 mb-3 font-weight-normal">Zresetuj hasło</h3>
+   
+    <p>
+        Jeżeli istnieje konto połączone z podanym adresem email, zostanie wysłana wiaodmość email zawierający link resetowania hasła.
+        Link przedawni się za 60 minut <!-- {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }} -->.
+    </p>
+    <p>Jeśli nie widzisz wiadomości email, sprawdź folder SPAM lub <a href="{{ path('app_forgot_password_request') }}">spróbuj ponownie</a>.</p>
+
+
+        </div>
+    </div>
+  </div>
+</section>
+<footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
+
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: #60a5fa;">
+    © 2022 Copyright:
+    <a class="text-white" href="/admin">docthor.pl</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+{% endblock %}
